@@ -1,4 +1,4 @@
-FROM nxswesolowski/docker-ubuntu-apache
+FROM nxswesolowski/ubuntu-apache-mysql
 MAINTAINER Rafal Wesolowski <wesolowski@nexus-netsoft.com>
 
 ADD .docker/scripts /opt/docker/scripts
