@@ -3,7 +3,9 @@ MAINTAINER Rafal Wesolowski <wesolowski@nexus-netsoft.com>
 
 ADD .docker/scripts /opt/docker/scripts
 
-RUN apt-get -y --force-yes install mysql-server-5.6 \
+RUN echo "mysql-server-5.7 mysql-server/root_password password docker" | debconf-set-selections \
+&& echo "mysql-server-5.7 mysql-server/root_password_again password docker" | debconf-set-selections \
+&& apt-get -y --force-yes install mysql-server-5.7 \
 && rm -rf /etc/mysql/mysql.conf.d/* \
 && chmod +x /opt/docker/scripts/*.sh
 
