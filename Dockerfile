@@ -1,7 +1,8 @@
-FROM nxswesolowski/ubuntu-apache
+FROM ubuntu16
 MAINTAINER Rafal Wesolowski <wesolowski@nexus-netsoft.com>
 
 ADD .docker/scripts /opt/docker/scripts
+ADD .docker/supervisor /etc/supervisor/conf.d
 
 RUN echo "mysql-server-5.7 mysql-server/root_password password docker" | debconf-set-selections \
 && echo "mysql-server-5.7 mysql-server/root_password_again password docker" | debconf-set-selections \
@@ -15,5 +16,5 @@ RUN rm -rf /var/lib/mysql/ib_logfile* \
 && /opt/docker/scripts/config-mysql.sh \
 && mkdir /var/www/log
 
-EXPOSE 22 80 3000 3306
+EXPOSE 3306
 CMD ["supervisord", "-n"]
