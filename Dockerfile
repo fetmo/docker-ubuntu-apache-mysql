@@ -5,7 +5,7 @@ ADD .docker/scripts /opt/docker/scripts
 ADD .docker/supervisor /etc/supervisor/conf.d
 
 RUN echo "deb http://archive.ubuntu.com/ubuntu trusty universe" >> /etc/apt/sources.list
-RUN rm -rf /var/lib/apt/lists/partial && apt-get clean && apt-get update
+RUN rm -rf /var/lib/apt/lists/partial && apt-get update
 
 RUN echo "mysql-server-5.6 mysql-server/root_password password docker" | debconf-set-selections \
 && echo "mysql-server-5.6 mysql-server/root_password_again password docker" | debconf-set-selections \
