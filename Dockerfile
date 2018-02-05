@@ -1,4 +1,4 @@
-FROM nxswesolowski/ubuntu-apache
+FROM nxswesolowski/ubuntu-apache16
 MAINTAINER Rafal Wesolowski <wesolowski@nexus-netsoft.com>
 
 ADD .docker/scripts /opt/docker/scripts
