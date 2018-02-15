@@ -1,5 +1,14 @@
 #!/bin/bash
 
+
+#bash /usr/bin/mysqld_safe   > /dev/null 2>&1 &
+
+
+service mysql start
+
+# https://serverfault.com/questions/870568/fatal-error-cant-open-and-lock-privilege-tables-table-storage-engine-for-use
+chown -R mysql:mysql /var/lib/mysql /var/run/mysqld 
+
 service mysql start
 
 USER="docker"
@@ -11,6 +20,7 @@ RET=1
 while [[ RET -ne 0 ]]; do
     echo "=> Connection established?"
     sleep 5
+
     mysql -uroot -pdocker -e "status" > /dev/null 2>&1
     RET=$?
 done
