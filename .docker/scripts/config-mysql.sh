@@ -3,7 +3,6 @@
 
 #bash /usr/bin/mysqld_safe   > /dev/null 2>&1 &
 
-
 service mysql start
 
 # https://serverfault.com/questions/870568/fatal-error-cant-open-and-lock-privilege-tables-table-storage-engine-for-use
@@ -14,7 +13,7 @@ service mysql start
 USER="docker"
 PASS="docker"
 USER2="nexus"
-PASS2="nexus"
+PASS2="nexus123"
 
 RET=1
 while [[ RET -ne 0 ]]; do
