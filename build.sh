@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t nxswesolowski/ubuntu-apache-mysql:5.7 .
+docker build -t nxsjung/ubuntu-apache-mysql:5.7_18.04 .

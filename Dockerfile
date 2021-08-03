@@ -1,5 +1,5 @@
-FROM nxswesolowski/ubuntu-apache:16.04
-MAINTAINER Rafal Wesolowski <wesolowski@nexus-netsoft.com>
+FROM nxsjung/ubuntu-apache:18.04
+MAINTAINER Moritz Jung <m.jung@nexus-united.com>
 
 ADD .docker/scripts /opt/docker/scripts
 ADD .docker/supervisor /etc/supervisor/conf.d
